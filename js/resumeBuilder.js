@@ -13,7 +13,7 @@ var bio = {
 var work = {
 	"career": [
 		{"employer": "British government",
-	 	"title": "Financial represantive of the Treasury",
+	 	"title": "Financial represantative of the Treasury",
 	 	"dates": "1915 - 1919",
 	 	"location": "London",
 	 	"description": "Participated in the Versailles peace conference."
@@ -22,7 +22,7 @@ var work = {
 	 	"title": "Author",
 	 	"dates": "1919 - 1924",
 	 	"location": "Cambridge",
-	 	"description": "Published 'The economic consequences of the Peace', 'A Treatise on Probability' and other well-received books."
+	 	"description": "Published 'The economic consequences of Peace', 'A Treatise on Probability' and other well-received books."
 		},
 		{"employer": "University of Cambridge",
 		 "title": "Professor",
@@ -51,6 +51,22 @@ var education = {
 	]
 };
 
+var projects = {
+	"allproj": [
+		{"title": "The economic consequences of Peace",
+		 "dates": "1919 - 1921",
+		 "description": "Keynes attended the Versailles Conference as a delegate of the British Treasury and argued for a much more generous peace. It was a best seller throughout the world and was critical in establishing a general opinion that the Versailles Treaty was a 'Carthaginian peace'. It helped to consolidate American public opinion against the treaty and involvement in the League of Nations.",
+		 "imageURL": "http://ecx.images-amazon.com/images/I/41J4T4UdXeL.jpg"
+		},
+		{"title": "A Treatise on Probability",
+		 "dates": "1922",
+		 "description": "The Meaning Of Probability - Probability In Relation To The Theory Of Knowledge - The Measurement Of Probabilities - The Principle Of Indifference - Other Methods Of Determining Probabilities - The Weight Of Arguments",
+		 "imageURL": "http://ecx.images-amazon.com/images/I/41YRrQW0yVL.jpg"
+		}
+	]
+}
+
+$("#main").append(internationalizeButton);
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -89,6 +105,22 @@ for (job in work.career) {
 	$("#work-entry").append(formattedworkDescription);
 };
 
+projects.display = function() {
+	for (projs in projects.allproj) {
+		var formattedprojectTitle = HTMLprojectTitle.replace("%data%", projects.allproj[projs].title);
+		var formattedprojectDates = HTMLprojectDates.replace("%data%", projects.allproj[projs].dates);
+		var formattedprojectDescription = HTMLprojectDescription.replace("%data%", projects.allproj[projs].description);
+		var formattedprojectImage = HTMLprojectImage.replace("%data%", projects.allproj[projs].imageURL);
+		$("#projects").append(HTMLprojectStart);
+		$(".project-entry:last").append(formattedprojectTitle);
+		$(".project-entry:last").append(formattedprojectDates);
+		$(".project-entry:last").append(formattedprojectDescription);
+		$(".project-entry:last").append(formattedprojectImage);
+
+	}
+}
+
+projects.display();
 
 $("#education").append(HTMLschoolStart);
 $("#education-entry").append(formattedEducation);

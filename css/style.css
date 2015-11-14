@@ -112,6 +112,14 @@ a {
   background-color: #f5ae23;
 }
 
+.img-proj {
+  max-height: 200px;
+  width: auto;
+  box-shadow: -5px 5px 2px -2px black;
+  padding: 0;
+  margin: 10px 0 10px 5px;
+}
+
 .orange-text {
   color: #f5ae23;
 }

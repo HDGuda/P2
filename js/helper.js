@@ -31,7 +31,7 @@ var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%">';
+var HTMLprojectImage = '<img class="img-proj" src="%data%">';
 
 var HTMLschoolStart = '<div class="education-entry" id="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
@@ -60,6 +60,19 @@ $(document).ready(function() {
   });
 });
 
+function inName() {
+  var namesplit = bio.name.trim().split(" ");
+  var internationalname = "";
+  namesplit = namesplit.reverse();
+  namesplit[0] = namesplit[0].toUpperCase();
+  namesplit.reverse();
+  for (var word in namesplit) {
+    internationalname = internationalname + namesplit[word] + " ";
+  }
+  return (internationalname.trim());
+}
+
+
 /*
 The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
 */
@@ -76,7 +89,9 @@ function logClicks(x,y) {
 }
 
 $(document).click(function(loc) {
-  // your code goes here!
+  var x = loc.pageX;
+  var y = loc.pageY;
+  logClicks(x,y);
 });
 
 
