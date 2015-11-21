@@ -117,7 +117,7 @@ a {
   width: auto;
   box-shadow: -5px 5px 2px -2px black;
   padding: 0;
-  margin: 10px 0 10px 5px;
+  margin: 10px 20px 10px 5px;
 }
 
 .orange-text {
@@ -178,6 +178,18 @@ span {
 
 #lets-connect {
   text-align: center;
+}
+
+#lets-connect a {
+  margin-top: 0;
+  display: inline;
+}
+
+#education h3 {
+  font-size: 18px;
+  line-height: 15px;
+  margin-top: 15px;
+  padding-bottom: 5px;
 }
 
 /* Media queries to handle various device widths */
